@@ -1,0 +1,1 @@
+This small system is made for sole purpose of VMT101 Tutorial, which consists of a login page at index.html, whose logic can be found in authentication.js file (which also demonstrates the implementation of JavaScript for this tutorial)

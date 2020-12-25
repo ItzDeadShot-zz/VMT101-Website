@@ -1,3 +1,11 @@
-{
-     "nama": "iqrar"
-}
+[
+    {
+        "username": "deadshot",
+        "password": "deadshot"
+    },
+    {
+        "username": "testing",
+        "password": "123" 
+    }
+]
+    
