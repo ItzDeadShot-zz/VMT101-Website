@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Split</title>
-    <style></style>
+    <script>
+        if(localStorage.getItem('myUser') == null) {
+            location.href = 'error403.html';
+        }
+    </script>
   </head>
   <body>
     <div class="content-container">
@@ -25,6 +29,10 @@
             <div class="overlay"></div>
           </div>
           <div class="side side-right">
+            <div class="logout">
+                <label>Logged in as:</label> 
+                <b><label id="user"></label>&nbsp;</b></label>(<a href="index.html" id="logout">LOGOUT</a>)
+            </div>
             <div class="intro-content">
               <div class="profile">
                 <img src="images/JS.png" alt="profile2" />
@@ -41,7 +49,7 @@
             <section id="js">
               <h2>Scripting Language</h2>
               <p>
-                JavaScript, often abbreviated as JS, is a programming language
+                <b>JavaScript</b>, often abbreviated as <b>JS</b>, is a <i>scripting language</i>
                 that conforms to the ECMAScript specification. JavaScript is
                 high-level, often just-in-time compiled, and multi-paradigm. It
                 has curly-bracket syntax, dynamic typing, prototype-based
@@ -51,14 +59,16 @@
                   >wikipedia</a
                 >)
               </p>
-              <br />
+              <br/>
               <div class="iframe-container">
                 <iframe
                   class="responsive-iframe"
                   src="https://www.youtube.com/embed/OSWppEa2Zac"
                 ></iframe>
               </div>
-              <br />
+              <br/>
+
+
             </section>
           </div>
           <!-- /page-inner -->
@@ -69,7 +79,7 @@
             <section>
               <h2>Markup Language</h2>
               <p>
-                Hypertext Markup Language (HTML) is the standard markup language
+                <b>Hypertext Markup Language</b> (<b>HTML</b>) is the standard <i>markup language</i> 
                 for documents designed to be displayed in a web browser. It can
                 be assisted by technologies such as Cascading Style Sheets (CSS)
                 and scripting languages such as JavaScript. (<a
@@ -134,7 +144,7 @@
                 </table>
               </div>
               <p>
-                Although HTML5 is ut for a very long time there are still some
+                Although HTML5 is out for a very long time there are still some
                 developers who are using older versions because it is continent
                 to them. The following are the advantages of HTML5:
               </p>
@@ -157,6 +167,7 @@
     </div>
     <!-- /container -->
 
+    <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -173,13 +184,25 @@
         $(".side-right .intro-content").click(function () {
           $(".splitlayout").addClass("open-right");
           $(".splitlayout").removeClass("close-left reset-layout");
+          $(".logout").hide();
         });
 
         $(".back-left").click(function () {
           $(".splitlayout").removeClass("open-right");
           $(".splitlayout").addClass("close-right reset-layout");
+          $(".logout").show();
         });
       });
+
+      var loggedInUser = document.getElementById('user');
+        user = localStorage.getItem('myUser');
+        console.log(user)
+        loggedInUser.innerText = user
+
+      var logoutLink = document.getElementById('logout');
+      logoutLink.onclick = function () {
+          localStorage.removeItem('rememberMe');
+      }
     </script>
   </body>
 </html>

@@ -5,7 +5,10 @@
         otherwise:
             Store data from local storage to array
 */
-var allUsers = [];
+var allUsers = [];  // array to store all users
+var currentUser = ''; // variable to store current user in logged in system
+var rememberMe = 0 // variable to check remember me value
+
 if (localStorage.getItem("myStorage") == null) {
   allUsers = [
     {
@@ -26,6 +29,7 @@ function login() {
   var _username = document.getElementById("username");
   var _password = document.getElementById("password");
   var error = document.getElementById("error");
+  var _remember_me = document.getElementById("remember_me");
   var valid = false;
   error.innerHTML = "";
 
@@ -42,12 +46,18 @@ function login() {
       _password.value == allUsers[user].password
     ) {
       valid = true;
+      currentUser =  allUsers[user].username;
     }
   }
 
   //if user exists then login to the system, else show error message
   if (valid) {
     alert("Successfully Logged In!");
+    if (_remember_me.checked == true) {
+      rememberMe = 1
+      localStorage.setItem('rememberMe', rememberMe)
+    }
+    localStorage.setItem("myUser", currentUser);
     location.href = "home.html";
   } else {
     error.innerHTML = "Incorrect Credentials!";

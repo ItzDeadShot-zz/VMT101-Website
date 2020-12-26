@@ -72,6 +72,10 @@ body {
   color: #777;
 }
 
+.form input[type="checkbox"] {
+  text-align: left;
+}
+
 .form .input-box input:focus,
 .form .input-box input:valid {
   border-bottom-color: #5656db;

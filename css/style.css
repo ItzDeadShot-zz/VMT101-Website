@@ -119,6 +119,13 @@ body {
   background: white;
 }
 
+.side-right .logout {
+	margin-top: 10%;
+	margin-right: 6%;
+	text-align: right;
+	font-size: 1.3em;
+  }
+
 .profile img {
   max-width: 100%;
   border-radius: 00%;

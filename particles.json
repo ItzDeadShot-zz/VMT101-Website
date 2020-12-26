@@ -81,7 +81,7 @@
       },
       "onclick": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "push"
       },
       "resize": true
     },
@@ -94,10 +94,10 @@
       },
       "bubble": {
         "distance": 300,
-        "size": 20,
-        "duration": 5,
+        "size": 10,
+        "duration": 2,
         "opacity": 8,
-        "speed": 6
+        "speed": 10
       },
       "repulse": {
         "distance": 100
