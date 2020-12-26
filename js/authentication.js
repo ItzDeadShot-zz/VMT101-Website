@@ -50,8 +50,8 @@ function login() {
     alert("Successfully Logged In!");
     location.href = "home.html";
   } else {
-    error.innerHTML = "Incorrect Credentials";
-    console.log("Incorrect Credentials");
+    error.innerHTML = "Incorrect Credentials!";
+    console.log("Incorrect Credentials!");
   }
 }
 
@@ -68,7 +68,7 @@ function register() {
   } else {
     allUsers.push({ username: _username.value, password: _password.value });
     localStorage.setItem("myStorage", JSON.stringify(allUsers));
-    alert("Registered Successfully!");
+    alert("Registered Successfully, proceed to Login!");
     location.href = "index.html";
   }
 }

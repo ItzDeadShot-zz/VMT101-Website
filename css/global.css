@@ -85,7 +85,21 @@ body {
   color: #777;
 }
 
-.form .input-box input[type="button"] {
+.btn1 {
+  border: none;
+  cursor: pointer;
+  background: #4CAF50;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+
+.btn1:hover {
+  background: #206622;
+}
+
+.btn2 {
   border: none;
   cursor: pointer;
   background: #5656db;
@@ -95,18 +109,9 @@ body {
   border-radius: 8px;
 }
 
-.form .input-box input[type="submit"]:hover,
+.btn2:hover,
 .form a:hover {
   background: #3030ce;
-}
-
-.form a {
-  text-decoration: none;
-  color: #777;
-  margin-top: 20px;
-  font-weight: bold;
-  display: inline-block;
-  transition: 0.5s;
 }
 
 #error {
