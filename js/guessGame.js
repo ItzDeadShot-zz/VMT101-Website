@@ -1,4 +1,7 @@
 
+/*
+    Variable declarations that will be used in guessing game
+*/
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 const guesses = document.querySelector(".guesses");
 const lastResult = document.querySelector(".lastResult");
@@ -8,6 +11,9 @@ const guessField = document.querySelector(".guessField");
 let guessCount = 1;
 let resetButton;
 
+/*
+    This function will check the guess made by the user and show the message (correct or wrong) based on user input. It will also show some previous attempts.
+ */
 function checkGuess() {
   let userGuess = Number(guessField.value);
   if (guessCount === 1) {
@@ -21,7 +27,7 @@ function checkGuess() {
     lastResult.style.backgroundColor = "green";
     lowOrHi.textContent = "";
     setGameOver();
-  } else if (guessCount === 10) {
+  } else if (guessCount === 5) {
     lastResult.textContent = "!!!GAME OVER!!!";
     lowOrHi.textContent = "";
     setGameOver();
@@ -40,8 +46,12 @@ function checkGuess() {
   guessField.focus();
 }
 
+// adding click event on button
 guessSubmit.addEventListener("click", checkGuess);
 
+/*
+    This function will disable input and button fields and give option to play a new game.
+ */
 function setGameOver() {
   guessField.disabled = true;
   guessSubmit.disabled = true;
@@ -52,6 +62,9 @@ function setGameOver() {
   resetButton.addEventListener("click", resetGame);
 }
 
+/*
+    This function will clear all the fields and labels to prepare for new game, and enable guess input field and submit button
+ */
 function resetGame() {
   guessCount = 1;
   const resetParas = document.querySelectorAll(".resultParas p");
