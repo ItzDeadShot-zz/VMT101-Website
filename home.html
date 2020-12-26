@@ -45,7 +45,7 @@
         </div>
         <!-- /intro -->
         <div class="page page-right">
-          <div class="page-inner">
+          <div class="page-inner" id="page-right-inner">
             <section id="js">
               <h2>Scripting Language</h2>
               <p>
@@ -67,8 +67,26 @@
                 ></iframe>
               </div>
               <br/>
-
-
+              <p>
+                Lets play a small guessing game using <b>JavaScript</b>. You need to guess a number from <em>1 - 10</em> and I will tell you if you guessed it correctly or not. 
+              </p>
+              <div class="form-group game justify-content-center" id="game">
+                <p>Enter a Guess: </p>
+                <div class="row">
+                    <div class="col-9">
+                        <input class="form-control guessField" type="text" id="guessField" autocomplete="off">
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" class="guessSubmit btn btn-primary" id="guessSubmit" value="Guess" style="width: 100%;">
+                    </div>
+                </div>
+                
+                <div class="resultParas" id="resultParas">
+                    <p class="guesses" id="guesses"></p>
+                    <p class="lastResult" id="lastResult"></p>
+                    <p class="lowOrHi" id="lowOrHi"></p>
+                </div>
+              </div>
             </section>
           </div>
           <!-- /page-inner -->
@@ -169,6 +187,7 @@
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/guessGame.js"></script>
     <script>
       $(document).ready(function () {
         $(".side-left .intro-content").click(function () {
@@ -202,6 +221,7 @@
       var logoutLink = document.getElementById('logout');
       logoutLink.onclick = function () {
           localStorage.removeItem('rememberMe');
+          localStorage.removeItem('myUser');
       }
     </script>
   </body>
