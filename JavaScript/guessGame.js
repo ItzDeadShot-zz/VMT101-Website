@@ -1,4 +1,10 @@
 
+console.log("nani?")
+console.log("nani?")
+console.log("nani?")
+console.log("nani?")
+console.log("nani?")
+console.log("nani?")
 /*
     Variable declarations that will be used in guessing game
 */
@@ -78,5 +84,5 @@ function resetGame() {
   guessField.value = "";
   guessField.focus();
   lastResult.style.backgroundColor = "white";
-  randomNumber = Math.floor(Math.random() * 100) + 1;
+  randomNumber = Math.floor(Math.random() * 10) + 1;
 }

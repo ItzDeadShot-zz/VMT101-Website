@@ -58,7 +58,7 @@ function login() {
       localStorage.setItem('rememberMe', rememberMe)
     }
     localStorage.setItem("myUser", currentUser);
-    location.href = "home.html";
+    location.href = "tutorial.html";
   } else {
     error.innerHTML = "Incorrect Credentials!";
     console.log("Incorrect Credentials!");
