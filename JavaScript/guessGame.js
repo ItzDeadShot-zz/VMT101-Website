@@ -1,10 +1,4 @@
 
-console.log("nani?")
-console.log("nani?")
-console.log("nani?")
-console.log("nani?")
-console.log("nani?")
-console.log("nani?")
 /*
     Variable declarations that will be used in guessing game
 */
